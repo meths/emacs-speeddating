@@ -63,6 +63,7 @@
     "%Y/%m/%d"                 ; 2018/03/18
     "%H:%M:%S"
     "%Y"
+    "%B"
     "%A")
   "Date and time formats.
 The format uses the same syntax as `format-time-string'."

@@ -45,5 +45,17 @@
     (speeddating-increase 1)
     (should (string= (buffer-string) "Tuesday"))))
 
+(ert-deftest full-months ()
+  (with-temp-buffer
+    (insert "April")
+    (backward-char 1)
+    (speeddating-increase 1)
+    (should (string= (buffer-string) "May")))
+  (with-temp-buffer
+    (insert "May")
+    (backward-char 1)
+    (speeddating-decrease 5)
+    (should (string= (buffer-string) "December"))))
+
 (provide 'speeddating-tests)
 ;;; speeddating-tests.el ends here
