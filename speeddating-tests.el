@@ -38,6 +38,28 @@
     (speeddating-increase 10)
     (should (string= (buffer-string) "2019-01-18T19:39:13+08:00"))))
 
+(ert-deftest letter-dates ()
+  (with-temp-buffer
+    (insert "Wednesday, June 3, 2026")
+    (backward-char 1)
+    (speeddating-increase 1)
+    (should (string= (buffer-string) "Thursday, June 3, 2027")))
+  (with-temp-buffer
+    (insert "Wednesday, June 3, 2026")
+    (backward-char 7)
+    (speeddating-increase 1)
+    (should (string= (buffer-string) "Thursday, June 4, 2026")))
+  (with-temp-buffer
+    (insert "Wednesday, June 3, 2026")
+    (backward-char 9)
+    (speeddating-increase 1)
+    (should (string= (buffer-string) "Friday, July 3, 2026")))
+  (with-temp-buffer
+    (insert "Wednesday, June 3, 2026")
+    (goto-char 4)
+    (speeddating-increase 1)
+    (should (string= (buffer-string) "Thursday, June 4, 2026"))))
+
 (ert-deftest monday ()
   (with-temp-buffer
     (insert "Monday")
