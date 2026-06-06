@@ -64,7 +64,8 @@
     "%H:%M:%S"
     "%Y"
     "%B"
-    "%A")
+    "%A"
+    "%a")
   "Date and time formats.
 The format uses the same syntax as `format-time-string'."
   :type '(repeat (choice string))

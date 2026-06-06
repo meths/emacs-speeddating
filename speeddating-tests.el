@@ -57,5 +57,17 @@
     (speeddating-decrease 5)
     (should (string= (buffer-string) "December"))))
 
+(ert-deftest abbrev-days ()
+  (with-temp-buffer
+    (insert "Tue")
+    (backward-char 1)
+    (speeddating-increase 1)
+    (should (string= (buffer-string) "Wed")))
+  (with-temp-buffer
+    (insert "Thu")
+    (backward-char 1)
+    (speeddating-decrease 5)
+    (should (string= (buffer-string) "Sat"))))
+
 (provide 'speeddating-tests)
 ;;; speeddating-tests.el ends here
