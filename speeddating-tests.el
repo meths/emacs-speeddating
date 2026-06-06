@@ -45,6 +45,18 @@
     (speeddating-increase 1)
     (should (string= (buffer-string) "Tuesday"))))
 
+(ert-deftest abbrev-days ()
+  (with-temp-buffer
+    (insert "Tue")
+    (backward-char 1)
+    (speeddating-increase 1)
+    (should (string= (buffer-string) "Wed")))
+  (with-temp-buffer
+    (insert "Thu")
+    (backward-char 1)
+    (speeddating-decrease 5)
+    (should (string= (buffer-string) "Sat"))))
+
 (ert-deftest full-months ()
   (with-temp-buffer
     (insert "April")
@@ -57,17 +69,30 @@
     (speeddating-decrease 5)
     (should (string= (buffer-string) "December"))))
 
-(ert-deftest abbrev-days ()
+(ert-deftest abbrev-months ()
   (with-temp-buffer
-    (insert "Tue")
+    (insert "Jun")
     (backward-char 1)
     (speeddating-increase 1)
-    (should (string= (buffer-string) "Wed")))
+    (should (string= (buffer-string) "Jul")))
   (with-temp-buffer
-    (insert "Thu")
+    (insert "Sep")
     (backward-char 1)
     (speeddating-decrease 5)
-    (should (string= (buffer-string) "Sat"))))
+    (should (string= (buffer-string) "Apr"))))
+
+(ert-deftest months-issue ()
+  (with-temp-buffer
+    (insert "Apr")
+    (backward-char 1)
+    (speeddating-increase 1)
+    (should (string= (buffer-string) "May")))
+  (with-temp-buffer
+    (insert "Apr")
+    (backward-char 1)
+    (speeddating-increase 1)
+    (speeddating-increase 1)
+    (should (string= (buffer-string) "June"))))
 
 (provide 'speeddating-tests)
 ;;; speeddating-tests.el ends here

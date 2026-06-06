@@ -64,6 +64,7 @@
     "%H:%M:%S"
     "%Y"
     "%B"
+    "%b"
     "%A"
     "%a")
   "Date and time formats.
