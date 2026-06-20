@@ -27,6 +27,8 @@ Emacs 25.1 or newer
 Currently, the following formats are supported out of box.
 
 <!-- (dolist (s speeddating-formats) (insert (format "| `%s` | %s |\n" s (format-time-string s)))) -->
+| Format                     | Example                         |
+|----------------------------|---------------------------------|
 | `%a, %d %b %Y %H:%M:%S %z` | Sat, 20 Jun 2026 17:42:23 +0100 |
 | `%a %b %d %H:%M:%S %Y %z`  | Sat Jun 20 17:42:23 2026 +0100  |
 | `%Y-%m-%dT%H:%M:%S%:z`     | 2026-06-20T17:42:23+01:00       |
