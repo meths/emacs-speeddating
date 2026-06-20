@@ -27,19 +27,23 @@ Emacs 25.1 or newer
 Currently, the following formats are supported out of box.
 
 <!-- (dolist (s speeddating-formats) (insert (format "| `%s` | %s |\n" s (format-time-string s)))) -->
-| Format                     | Example                         |
-|----------------------------|---------------------------------|
-| `%a, %d %b %Y %H:%M:%S %z` | Sun, 18 Mar 2018 20:37:23 +0800 |
-| `%a %b %d %H:%M:%S %Y %z`  | Sun Mar 18 20:37:23 2018 +0800  |
-| `%Y-%m-%dT%H:%M:%S%:z`     | 2018-03-18T20:37:23+08:00       |
-| `%a %b %_d %H:%M:%S %Z %Y` | Sun Mar 18 20:37:23 CST 2018    |
-| `%Y-%m-%d %H:%M:%S`        | 2018-03-18 20:37:23             |
-| `%Y-%m-%d %H:%M`           | 2018-03-18 20:37                |
-| `%A, %B %d, %Y`            | Sunday, March 18, 2018          |
-| `%d %B %Y`                 | 18 March 2018                   |
-| `%d %b %Y`                 | 18 Mar 2018                     |
-| `%B %-d, %Y`               | March 18, 2018                  |
-| `%Y-%m-%d`                 | 2018-03-18                      |
-| `%Y/%m/%d`                 | 2018/03/18                      |
-| `%H:%M:%S`                 | 20:37:23                        |
-| `%A`                       | Sunday                          |
+| `%a, %d %b %Y %H:%M:%S %z` | Sat, 20 Jun 2026 17:42:23 +0100 |
+| `%a %b %d %H:%M:%S %Y %z`  | Sat Jun 20 17:42:23 2026 +0100  |
+| `%Y-%m-%dT%H:%M:%S%:z`     | 2026-06-20T17:42:23+01:00       |
+| `%a %b %_d %H:%M:%S %Z %Y` | Sat Jun 20 17:42:23 BST 2026    |
+| `%a %b %-d %H:%M:%S %Y %Z` | Sat Jun 20 17:42:23 2026 BST    |
+| `%-d %B %Y, at %H:%M`      | 20 June 2026, at 17:42          |
+| `%Y-%m-%d %H:%M:%S`        | 2026-06-20 17:42:23             |
+| `%Y-%m-%d %H:%M`           | 2026-06-20 17:42                |
+| `%A, %B %-d, %Y`           | Saturday, June 20, 2026         |
+| `%d %B %Y`                 | 20 June 2026                    |
+| `%d %b %Y`                 | 20 Jun 2026                     |
+| `%B %-d, %Y`               | June 20, 2026                   |
+| `%Y-%m-%d`                 | 2026-06-20                      |
+| `%Y/%m/%d`                 | 2026/06/20                      |
+| `%H:%M:%S`                 | 17:42:23                        |
+| `%Y`                       | 2026                            |
+| `%B`                       | June                            |
+| `%b`                       | Jun                             |
+| `%A`                       | Saturday                        |
+| `%a`                       | Sat                             |
